@@ -148,14 +148,17 @@ public class Miny {
                             for(int j=0;j!=3;j++)
                                 for(int k=0;k!=3;k++)
                                 {
-                                    if(pole[seznam.get(i)+j-1][seznam.get(i+1)+k-1].equals(mlha) && miny[seznam.get(i)+j-1][seznam.get(i+1)+k-1].equals(nula))
+                                    if(pole[seznam.get(i)+j-1][seznam.get(i+1)+k-1].equals(mlha))
                                     {
-                                        seznam.add(seznam.get(i)+j-1);
-                                        seznam.add(seznam.get(i+1)+k-1);
-                                    }
-                                    pole[seznam.get(i)+j-1][seznam.get(i+1)+k-1] =
+                                        if (miny[seznam.get(i)+j-1][seznam.get(i+1)+k-1].equals(nula))
+                                        {
+                                            seznam.add(seznam.get(i)+j-1);
+                                            seznam.add(seznam.get(i+1)+k-1);
+                                        }
+                                        pole[seznam.get(i)+j-1][seznam.get(i+1)+k-1] =
                                         miny[seznam.get(i)+j-1][seznam.get(i+1)+k-1];
-                                    odkryto++;
+                                        odkryto++;
+                                    }  
                                 }
                             seznam.remove(i);
                             seznam.remove(i);
